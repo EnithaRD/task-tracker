@@ -44,4 +44,4 @@ class TaskStore:
         return task
 
     def all(self):
-        return self._tasks
+        return list(self._tasks)

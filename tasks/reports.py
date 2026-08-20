@@ -4,10 +4,9 @@
 def completion_rate(tasks):
     """Return the percentage of tasks that are done, to one decimal place."""
 
-    done = [t for t in tasks if t["status"] == "done"]
-    outstanding = [t for t in tasks if t["status"] != "done"]
-
-    if not outstanding:
+    if not tasks:
         return 0.0
 
-    return round(len(done) / len(outstanding) * 100, 1)
+    done = [t for t in tasks if t["status"] == "done"]
+
+    return round(len(done) / len(tasks) * 100, 1)
