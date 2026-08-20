@@ -57,6 +57,18 @@ class TestTaskStore(unittest.TestCase):
         with self.assertRaises(KeyError):
             store.set_status(42, "done")
 
+    def test_add_gives_each_task_its_own_tags_list(self):
+        store = TaskStore()
+
+        first = store.add("Write the spec")
+        second = store.add("Review the spec")
+
+        self.assertIsNot(first["tags"], second["tags"])
+
+        first["tags"].append("urgent")
+
+        self.assertEqual(second["tags"], [])
+
     def test_all_returns_a_snapshot(self):
         store = TaskStore()
 

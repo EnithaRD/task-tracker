@@ -10,7 +10,10 @@ class TaskStore:
         self._tasks = []
         self._next_id = 1
 
-    def add(self, title, status="pending", tags=[]):
+    def add(self, title, status="pending", tags=None):
+        if tags is None:
+            tags = []
+
         task = {
             "id": self._next_id,
             "title": title,
