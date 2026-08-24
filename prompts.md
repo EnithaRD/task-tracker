@@ -91,3 +91,24 @@ evaluate the hypothesis and explain the cause.
 
 Where Claude's answer did not match my evidence, I would reject
 the answer and verify the behavior independently.
+
+
+## Day 10 — Exercise 10.1
+
+### Session Degradation
+
+Symptoms observed:
+- Drift: old/abandoned decisions came back into discussion.
+- Contradiction: priority changed from number to word.
+- Over-reach: unrelated Flask context appeared.
+- Stale picture: earlier project context could become outdated.
+- Lost constraints: latest decisions could be forgotten.
+- Hedging: responses became less focused.
+
+### Earliest Warning Sign
+Contradiction — the session had difficulty keeping the latest priority decision.
+
+### Lesson
+Too much unrelated context makes the session less reliable. Keep sessions focused
+and use clear/compact/resume when appropriate.
+-
