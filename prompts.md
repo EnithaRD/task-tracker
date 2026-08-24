@@ -111,4 +111,39 @@ Contradiction — the session had difficulty keeping the latest priority decisio
 ### Lesson
 Too much unrelated context makes the session less reliable. Keep sessions focused
 and use clear/compact/resume when appropriate.
--
+
+### Exercise 10.2 — Decision Drill
+
+1. `/clear` — when starting an unrelated task.
+2. `/compact` — when continuing the same task but the session is noisy.
+3. `claude --continue` — when returning to the most recent session.
+4. `claude --resume` — when returning to an earlier session.
+5. Fresh session — when the current session is confused or contradictory.
+
+Tests completed:
+- `/compact` — passed.
+- `claude --continue` — passed.
+- `/clear` — passed.
+
+Default rule:
+Clear between tasks, compact within a task, resume across a break.
+
+### Exercise 10.3 — Context Experiment
+
+#### Run 1 — Name nothing
+- Time: ~7 seconds
+- Specificity: Good; identified `tasks/store.py` and the required test.
+- Leakage: None observed.
+- Result: Agent successfully found the relevant files by inspecting the project.
+
+#### Run 2 — Name the two relevant files
+- Time: ~13 seconds
+- Specificity: Very good; implementation and test cases were clearly identified.
+- Leakage: None observed.
+- Result: Naming only the relevant files gave focused and detailed guidance.
+
+#### Run 3 — Name every file
+- Time: ~7 seconds
+- Specificity: Good; correctly identified only the two files that need changes.
+- Leakage: No significant leakage observed.
+- Result: Extra files did not improve the answer and were unnecessary.

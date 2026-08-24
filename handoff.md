@@ -26,4 +26,11 @@ Add due dates to tasks with validation, tests, and demo output.
 
 ## Open questions
 
-- [Anything still unresolved]   
+- [Anything still unresolved]
+
+### Exercise 10.4 — Handoff Test
+
+- Created and committed `handoff.md`.
+- Started a fresh session after the previous session ended.
+- The new session used `handoff.md` to recover the project context.
+- Lesson: a good handoff preserves decisions, rejected approaches, and the next concrete step.
