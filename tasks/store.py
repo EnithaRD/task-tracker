@@ -49,25 +49,25 @@ class TaskStore:
                 return task
         return None
 
-    def set_status(self, task_id, status):
+    def _get_or_raise(self, task_id):
         task = self.find(task_id)
         if task is None:
             raise KeyError(task_id)
+        return task
+
+    def set_status(self, task_id, status):
+        task = self._get_or_raise(task_id)
         task["status"] = status
         return task
 
     def set_due_date(self, task_id, due_date):
-        task = self.find(task_id)
-        if task is None:
-            raise KeyError(task_id)
+        task = self._get_or_raise(task_id)
         _validate_due_date(due_date)
         task["due_date"] = due_date
         return task
 
     def archive(self, task_id):
-        task = self.find(task_id)
-        if task is None:
-            raise KeyError(task_id)
+        task = self._get_or_raise(task_id)
         task["archived"] = True
         return task
 

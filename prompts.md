@@ -147,3 +147,10 @@ Clear between tasks, compact within a task, resume across a break.
 - Specificity: Good; correctly identified only the two files that need changes.
 - Leakage: No significant leakage observed.
 - Result: Extra files did not improve the answer and were unnecessary.
+
+
+Day 12 — Command deletion
+
+Deleted /debug-hypothesis.
+
+Reason: the underlying prompt is short enough to type manually, while /refactor and /review provide more reusable structure and automation. Keeping /debug-hypothesis would add maintenance cost without enough repeated savings.
