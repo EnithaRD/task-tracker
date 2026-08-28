@@ -55,21 +55,20 @@ class TaskStore:
             raise KeyError(task_id)
         return task
 
-    def set_status(self, task_id, status):
+    def _set_field(self, task_id, field, value):
         task = self._get_or_raise(task_id)
-        task["status"] = status
+        task[field] = value
         return task
+
+    def set_status(self, task_id, status):
+        return self._set_field(task_id, "status", status)
 
     def set_due_date(self, task_id, due_date):
-        task = self._get_or_raise(task_id)
         _validate_due_date(due_date)
-        task["due_date"] = due_date
-        return task
+        return self._set_field(task_id, "due_date", due_date)
 
     def archive(self, task_id):
-        task = self._get_or_raise(task_id)
-        task["archived"] = True
-        return task
+        return self._set_field(task_id, "archived", True)
 
     def add_tag(self, task_id, tag):
         task = self.find(task_id)

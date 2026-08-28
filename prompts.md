@@ -154,3 +154,28 @@ Day 12 — Command deletion
 Deleted /debug-hypothesis.
 
 Reason: the underlying prompt is short enough to type manually, while /refactor and /review provide more reusable structure and automation. Keeping /debug-hypothesis would add maintenance cost without enough repeated savings.
+
+
+## Exercise 13.4 — Trigger Test
+
+| # | Request | Marker appeared? | Missing words if not |
+|---|---|---|---|
+| 1 | Update the changelog. | | |
+| 2 | What has changed since the last release? | | |
+| 3 | Write up the recent work for the release notes. | | |
+| 4 | Document what we shipped today. | | |
+| 5 | I need to tell the team what is new in this version. | | |
+| 6 | Summarise the last few commits for users. | | |
+
+## Exercise 13.5 — Supporting File
+
+Created `style.md` to hold detailed changelog categories,
+writing rules, and examples.
+
+Updated `SKILL.md` to reference `style.md` when formatting
+the changelog.
+
+Verification:
+- Skill triggered successfully.
+- Supporting file was loaded.
+- CHANGELOG.md retained the required formatting.
